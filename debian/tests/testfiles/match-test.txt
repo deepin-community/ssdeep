@@ -1,0 +1,2 @@
+ssdeep,1.1--blocksize:hash:hash,filename
+384:RknlFp78cOt+qpmMPANxabN29y2w9t9uSVaj5:unlFpwcbPgANxSQw9t3Va9,"test.bin"

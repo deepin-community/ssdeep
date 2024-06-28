@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Stops the execution, if there is an error
+set -e
+
+# Runs ssdeep, which expects input
+echo | ssdeep > /dev/null 

@@ -1,0 +1,23 @@
+#!/bin/bash
+
+set -e
+
+# Defines expected resut
+TARGET=$(cat <<EOF
+ssdeep,1.1--blocksize:hash:hash,filename
+3:XJCGSEVLtFc2DLPS/vn:XJCGlA0L6nn,"stdin"
+EOF
+)
+
+ACTUAL="$(echo "'Talk is cheap. Show me the code.' - Linus Torvalds" | ssdeep)"
+
+# Compares actual result with targeted result
+if [ "${ACTUAL}" != "${TARGET}" ]
+then
+	echo "Output differs from target value:"
+	echo "Actual result: $ACTUAL"
+	echo "Expected result $TARGET"
+	exit 1
+fi
+
+exit 0

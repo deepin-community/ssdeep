@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -e
+
+# Defines expected resut
+TARGET=$(cat <<EOF
+test.bin matches debian/tests/testfiles/match-test.txt:test.bin (100)
+test-2.bin matches debian/tests/testfiles/match-test.txt:test.bin (94)
+EOF
+)
+
+# Performs matching and sorts results to get deterministic output
+ACTUAL="$(ssdeep -b -r -m debian/tests/testfiles/match-test.txt debian/tests/testfiles/ | sort -r)" 
+
+# Compares actual result with targeted result
+if [ "${ACTUAL}" != "${TARGET}" ]
+then
+	echo "Output differs from target value:"
+	echo "Actual result:\n$ACTUAL"
+	echo "Expected result:\n$TARGET"
+	exit 1
+fi
+
+exit 0

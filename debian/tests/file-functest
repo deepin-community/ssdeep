@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -e
+
+# Defines expected resut
+TARGET=$(cat <<EOF
+ssdeep,1.1--blocksize:hash:hash,filename
+384:RknlFp78cOt+qpmMPANxabN29y2w9t9uSVaj5:unlFpwcbPgANxSQw9t3Va9,"test.bin"
+EOF
+)
+
+# Computes ssdeep, use bare filename
+ACTUAL="$(ssdeep -b ./debian/tests/testfiles/test.bin)"
+
+# Compares actual result with targeted result
+if [ "${ACTUAL}" != "${TARGET}" ]
+then
+	echo "Output differs from target value:"
+	echo "Actual result: $ACTUAL"
+	echo "Expected result $TARGET"
+	exit 1
+fi
+
+exit 0
