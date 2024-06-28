@@ -1,0 +1,9 @@
+Bug-Database: https://github.com/ssdeep-project/ssdeep/issues
+Bug-Submit: https://github.com/ssdeep-project/ssdeep/issues/new
+Reference:
+  Author: Andrew Tridgell
+  Name: recursive piecewise hashing tool
+  Year: 2002
+  URL: https://ssdeep-project.github.io/ssdeep/index.html
+Repository: https://github.com/ssdeep-project/ssdeep.git
+Repository-Browse: https://github.com/ssdeep-project/ssdeep

@@ -1,0 +1,2 @@
+version=4
+https://github.com/ssdeep-project/ssdeep/tags .*/.*-?(\d\S+)\.tar\.(?:bz2|gz|xz)

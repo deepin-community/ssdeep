@@ -1,0 +1,3 @@
+/usr/include/*
+/usr/lib/*/libfuzzy*.so
+usr/lib/*/libfuzzy.a

@@ -1,5 +1,316 @@
-template-repository (1.0-1) unstable; urgency=medium
+ssdeep (2.14.1+git20180629.57fcfff-3) unstable; urgency=medium
 
-  * Initial release
+  * Team Upload.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+  [ Joao Eriberto Mota Filho ]
+  * debian/control:
+      - Bumped Standards-Version to 4.6.1.
+      - Migrated DH level to 13.
+  * debian/copyright:
+      - Added full text for GPL-2 license.
+      - Converted the last paragraph of the GPL-3 in a comment.
+      - Updated packaging copyright data.
+  * debian/not-installed: created to list the file libfuzzy.la.
+  * debian/tests/control:
+      - Removed not needed Depends field.
+      - Set smoke as superficial.
+  * debian/watch: updated the search rule to make it compliant
+    with new standards of the GitHub.
+
+  [ Jan Gru ]
+  * Add autopkgtests for testing package functionality.
+
+ -- Joao Eriberto Mota Filho <eriberto@debian.org>  Mon, 26 Dec 2022 18:15:06 -0300
+
+ssdeep (2.14.1+git20180629.57fcfff-2) unstable; urgency=medium
+
+  * Team Upload
+
+  [ Raphaël Hertzog ]
+  * Drop Christophe Monniez from Uploaders
+
+  [ Samuel Henrique ]
+  * Bump Standards-Version to 4.5.1
+  * Configure git-buildpackage for Debian
+  * Add salsa-ci.yml
+  * d/control: Add 'Rules-Requires-Root: no'
+  * d/libfuzzy2.symbols: Add 'Build-Depends-Package' field
+  * d/copyright: Add standalone License entries for GPL2 and GPL-2+
+
+  [ Debian Janitor ]
+  * Trim trailing whitespace.
+  * debian/control: Remove empty control field Uploaders.
+  * Bump debhelper from old 11 to 12.
+  * Set debhelper-compat version in Build-Depends.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+
+ -- Samuel Henrique <samueloph@debian.org>  Mon, 01 Feb 2021 00:35:33 +0000
+
+ssdeep (2.14.1+git20180629.57fcfff-1) unstable; urgency=medium
+
+  * Team upload.
+  [ Raphaël Hertzog ]
+  * d/control:
+    - Update Vcs-Git and Vcs-Browser for the move to salsa.debian.org
+    - Update team maintainer address to Debian Security Tools
+
+  [ SZ Lin (林上智) ]
+  * Import new upstream release
+  * Remove the patch which was merged in the new release
+  * Add upstream metadata file
+  * d/control:
+    - Bump debhelper version to 11
+    - Bump Standards-Version to 4.2.1
+  * d/copyright:
+    - Fix insecure copyright format URI
+   d/compat:
+    - Bump compat version to 11
+
+ -- SZ Lin (林上智) <szlin@debian.org>  Sat, 08 Sep 2018 23:01:32 +0800
+
+ssdeep (2.14-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * New upstream homepage.
+  * debian/control:
+      - Bumped Standards-Version to 4.0.0.
+      - Removed no longer needed build dependency dh-autoreconf.
+      - Removed the obsolete package libfuzzy2-dbg.
+  * debian/copyright:
+      - Added a new upstream.
+      - Updated upstream and packaging copyright years.
+  * debian/rules: removed no longer needed target override_dh_strip.
+  * debian/watch: updated.
+
+ -- Joao Eriberto Mota Filho <eriberto@debian.org>  Mon, 18 Sep 2017 11:45:29 -0300
+
+ssdeep (2.13-3) unstable; urgency=medium
+
+  * Team upload.
+  * Bumped DH level to 10.
+  * debian/control:
+      - Bumped Standards-Version to 3.9.8.
+      - Updated the Vcs-* fields to use https instead of http and git.
+  * debian/copyright:
+      - Fixed the licensing for some files.
+      - Updated the packaging copyright years.
+  * debian/libfuzzy2.docs: renamed to libfuzzy-dev.docs.
+  * debian/libfuzzy-dev.install: added the libfuzzy.a.
+  * debian/patches/10_fix-spelling-final-executable.patch: created.
+  * debian/rules: removed the '--with autoreconf' because it is default
+    in DH 10.
+  * debian/watch:
+      - Bumped to version 4.
+      - Fixed the searching.
+
+ -- Joao Eriberto Mota Filho <eriberto@debian.org>  Tue, 29 Nov 2016 20:03:49 -0200
+
+ssdeep (2.13-2) unstable; urgency=medium
+
+  * Team upload.
+  * Upload to unstable.
+
+ -- Joao Eriberto Mota Filho <eriberto@debian.org>  Wed, 17 Jun 2015 11:59:58 -0300
+
+ssdeep (2.13-1) experimental; urgency=medium
+
+  * Team upload.
+  * New upstream release. (Closes: #703808, #781568)
+  * debian/control:
+      - Added the word 'forensics' to long description.
+      - Updated the Vcs-* fields.
+  * debian/copyright: full updated.
+  * debian/libfuzzy2.docs: added to install the README file.
+  * debian/libfuzzy2.symbols: updated.
+  * debian/rules:
+      - Added the variable DEB_BUILD_MAINT_OPTIONS to improve the GCC hardening.
+      - Added the override_dh_installdocs target to install the 'NEWS' file in
+        all binaries.
+      - Removed the old-style definition about the LDFLAGS.
+  * debian/watch: improved.
+
+ -- Joao Eriberto Mota Filho <eriberto@debian.org>  Fri, 12 Jun 2015 18:19:28 -0300
+
+ssdeep (2.12-1) unstable; urgency=medium
+
+  * Team upload.
+  * Imported upstream version 2.12 (Closes: #764357)
+    + Drop patch enable_shared_library.patch (applied).
+  * Declare compliance with policy version 3.9.6: no changes needed
+
+ -- Helmut Grohne <helmut@subdivi.de>  Fri, 24 Oct 2014 18:57:33 +0200
+
+ssdeep (2.11-1) unstable; urgency=medium
+
+  * Team upload.
+  * Imported upstream version 2.11 (Closes: #741431)
+    + New thread-safe libfuzzy API functions (Closes: #721217)
+      Update debian/libfuzzy2.symbols
+    + No longer uses PATH_MAX
+    + Fixes hash scoring (Closes: #760817)
+    + Fixes memory leak (Closes: #702551)
+  * Add patch to build shared library again
+  * Declare compliance with policy version 3.9.5: no changes needed
+  * Switch from autotools-dev to dh-autoreconf to support new architectures
+    (Closes: #734912)
+  * Fix changelog syntax for 2.7-2: missing colon after "Closes".
+  * Bump to debhelper compat level 9.
+    + Hardening just works
+    + Multi-Arch paths (update debian/*.install)
+  * Convert to Multi-Arch
+  * Update debian/copyright.
+
+ -- Helmut Grohne <helmut@subdivi.de>  Tue, 16 Sep 2014 09:55:46 +0200
+
+ssdeep (2.7-2) unstable; urgency=low
+
+  [ Christophe Monniez ]
+  * [8c07aaa] Adding the missing Breaks+Replaces (Closes: #694368).
+
+ -- Michael Prokop <mika@debian.org>  Thu, 06 Dec 2012 14:19:39 +0100
+
+ssdeep (2.7-1) unstable; urgency=low
+
+  * Team upload.
+
+  [ Julien Valroff ]
+  * Update DEP-5 copyright syntax
+
+  [ Christophe Monniez ]
+  * Imported Upstream version 2.7
+
+ -- Julien Valroff <julien@debian.org>  Wed, 12 Oct 2011 20:22:30 +0200
+
+ssdeep (2.6-1) unstable; urgency=low
+
+  * Team upload.
+
+  [ Christophe Monniez ]
+  * Adding upstream version 2.6.
+  * Split the libfuzzy library from the ssdeep package.
+
+  [ Michael Prokop ]
+  * Switch to 3.0 (quilt) source package format.
+  * Drop debian/ssdeep.lintian-overrides (since we provide dev-pkg nowadays).
+  * Fix depends on libfuzzy2 in libfuzzy-dev.
+  * debian/rules: adjust debug package name.
+
+  [ Julien Valroff ]
+  * Use autotools-dev
+  * Bump debhelper compat to 8
+  * Bump Standards-Version to 3.9.2
+  * Drop useless source lintian overrides
+  * Update DEP-5 copyright syntax
+
+ -- Julien Valroff <julien@debian.org>  Sun, 18 Sep 2011 14:52:38 +0200
+
+ssdeep (2.5-1) unstable; urgency=low
+
+  [ Daniel Baumann ]
+  * Minimizing rules file.
+  * Adding stuff in rules that doesn't get done by dh automatically.
+
+  [ Christophe Monniez ]
+  * Fixing VCS fields in control file.
+  * Bumping standards version to 3.8.4.
+  * Merging upstream version 2.5.
+
+  [ Michael Prokop ]
+  * Build-Depend on debhelper (>= 7.0.50~).
+
+ -- Michael Prokop <mika@debian.org>  Mon, 31 May 2010 10:24:08 +0200
+
+ssdeep (2.2-1) unstable; urgency=low
+
+  * Merging upstream version 2.2.
+
+ -- Michael Prokop <mika@debian.org>  Sat, 25 Jul 2009 00:47:42 +0200
+
+ssdeep (2.1-2) unstable; urgency=low
+
+  * Updating package to standards version 3.8.2.
+  * Adding comment to lintian overrides.
+  * Adding source lintian overrides.
+  * Adding autotools-dev to build-depends.
+  * Using correct rfc-2822 date formats in changelog.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 09 Jul 2009 12:48:21 +0200
+
+ssdeep (2.1-1) unstable; urgency=low
+
+  [ Daniel Baumann ]
+  * Adding myself to copyright file.
+  * Replacing obsolete dh_clean -k with dh_prep.
+  * Prefixing debhelper files with package name.
+
+  [ Christophe Monniez ]
+  * Merging upstream version 2.1.
+
+  [ Daniel Baumann ]
+  * Updating to standards 3.8.1.
+  * Updating year in copyright file.
+  * Passing flags directly to configure.
+  * Tidy rules file.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 28 May 2009 22:42:22 +0200
+
+ssdeep (2.0-1) unstable; urgency=low
+
+  [ Christophe Monniez ]
+  * Merging upstream version 2.0 in debian branch.
+  * Fixing rules for 2.0 version.
+
+  [ Daniel Baumann ]
+  * Updating vcs fields.
+  * Correcting a couple of cosmetic things in rules.
+  * Adding dh_makeshlibs call in rules file.
+  * Adding lintian overrides.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 18 Sep 2008 18:16:00 +0200
+
+ssdeep (1.1-3) unstable; urgency=low
+
+  * Updating to standards 3.8.0.
+  * Upgrading package to debhelper 7.
+  * Sorting vcs fields in control file.
+  * Adding full license headers to copyright file.
+
+ -- Daniel Baumann <daniel@debian.org>  Sun, 14 Sep 2008 10:13:00 +0200
+
+ssdeep (1.1-2) unstable; urgency=low
+
+  [ Daniel Baumann ]
+  * Fixing spelling typo in long description.
+  * Using a full sentence in head of long description.
+
+  [ Christophe Monniez ]
+  * Adding verbosity in the long description (Closes #476219).
+
+ -- Daniel Baumann <daniel@debian.org>  Fri, 09 May 2008 09:20:00 +0200
+
+ssdeep (1.1-1) unstable; urgency=low
+
+  [ Christophe Monniez ]
+  * Initial release (Closes: #468956).
+
+  [ Daniel Baumann ]
+  * Moving manpages to FHS location.
+  * Adding ITP bug number to changelog.
+  * Correcting make call in install target of rules.
+  * Removing useless debhelper dirs file.
+  * Rewriting rules.
+  * Rewriting copyright file in machine-readable form.
+  * Adding FILEFORMAT to docs.
+  * Setting architecture to any.
+  * Rewrap package description.
+  * Adding homepage field in control.
+  * Adding vcs fields in control.
+  * Updating maintainer fields.
+  * Changing package section to optional.
+  * Bumping package to standards 3.7.3.
+  * Bumping package to debhelper 6.
+  * Removing useless whitespaces.
+
+ -- Christophe Monniez <christophe.monniez@fccu.be>  Fri, 25 Jan 2008 10:32:15 +0100

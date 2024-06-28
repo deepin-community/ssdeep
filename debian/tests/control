@@ -1,0 +1,4 @@
+Tests: smoke
+Restrictions: superficial
+
+Tests: simple-functest, file-functest, match-functest
