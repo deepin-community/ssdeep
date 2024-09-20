@@ -1,3 +1,9 @@
+ssdeep (2.14.1+git20180629.57fcfff-3deepin0) unstable; urgency=medium
+
+  * No source change upload against GCC 12.
+
+ -- Tianyu Chen <sweetyfish@deepin.org>  Fri, 20 Sep 2024 12:19:24 +0800
+
 ssdeep (2.14.1+git20180629.57fcfff-3) unstable; urgency=medium
 
   * Team Upload.
